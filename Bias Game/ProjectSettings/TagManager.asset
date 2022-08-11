@@ -9,6 +9,8 @@ TagManager:
   - ItemPannel
   - Suspect
   - LogManager
+  - Audio
+  - Button
   layers:
   - Default
   - TransparentFX
