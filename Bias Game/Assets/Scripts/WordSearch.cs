@@ -49,6 +49,7 @@ public class WordSearch : MonoBehaviour
                         newButton.name = word;
                         newButton.transform.SetParent(KeywordPanel.transform);
                         newButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = word;
+                        newButton.transform.localScale= new Vector3(1,1,1);
                     }
                     else 
                     {

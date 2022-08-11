@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 88397391}
   - component: {fileID: 88397390}
   m_Layer: 5
-  m_Name: Interrogation
+  m_Name: Log
   m_TagString: GroupButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -689,7 +689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Interrogation
+  m_text: Log
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -778,7 +778,7 @@ GameObject:
   - component: {fileID: 194274982}
   - component: {fileID: 194274981}
   m_Layer: 5
-  m_Name: MapPannel
+  m_Name: MapPanel
   m_TagString: ItemPannel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2552,7 +2552,7 @@ GameObject:
   - component: {fileID: 518344543}
   - component: {fileID: 518344542}
   m_Layer: 5
-  m_Name: EnvironmentalPannel
+  m_Name: DocPanel
   m_TagString: ItemPannel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3288,7 +3288,7 @@ GameObject:
   - component: {fileID: 710787235}
   - component: {fileID: 710787234}
   m_Layer: 5
-  m_Name: ItemPannel
+  m_Name: ItemPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3415,7 +3415,7 @@ GameObject:
   - component: {fileID: 761839516}
   - component: {fileID: 761839515}
   m_Layer: 5
-  m_Name: SuspectPannel
+  m_Name: SuspectPanel
   m_TagString: ItemPannel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4314,7 +4314,7 @@ GameObject:
   - component: {fileID: 1132635258}
   - component: {fileID: 1132635257}
   m_Layer: 5
-  m_Name: RightPannel
+  m_Name: RightPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4333,8 +4333,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 41222643}
-  - {fileID: 1713257588}
   - {fileID: 1147692991}
+  - {fileID: 1713257588}
   m_Father: {fileID: 642191930}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4395,7 +4395,7 @@ GameObject:
   - component: {fileID: 1147692996}
   - component: {fileID: 1147692995}
   m_Layer: 5
-  m_Name: Keyword Pannel
+  m_Name: Keyword1 Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4415,7 +4415,7 @@ RectTransform:
   m_Children:
   - {fileID: 1962296768}
   m_Father: {fileID: 1132635256}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -4796,7 +4796,7 @@ GameObject:
   - component: {fileID: 1155203917}
   - component: {fileID: 1155203916}
   m_Layer: 5
-  m_Name: MiddlePannel
+  m_Name: MiddlePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5022,7 +5022,7 @@ GameObject:
   - component: {fileID: 1260655097}
   - component: {fileID: 1260655096}
   m_Layer: 5
-  m_Name: Environmental Data
+  m_Name: Doc
   m_TagString: GroupButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5379,7 +5379,7 @@ GameObject:
   - component: {fileID: 1305806641}
   - component: {fileID: 1305806640}
   m_Layer: 5
-  m_Name: InterrogationPannel
+  m_Name: LogPanel
   m_TagString: ItemPannel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5757,7 +5757,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Suspect \nData"
+  m_text: Suspect
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5996,7 +5996,7 @@ GameObject:
   - component: {fileID: 1410697716}
   - component: {fileID: 1410697715}
   m_Layer: 5
-  m_Name: LeftPannel
+  m_Name: LeftPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6328,7 +6328,7 @@ GameObject:
   - component: {fileID: 1490473629}
   - component: {fileID: 1490473628}
   m_Layer: 5
-  m_Name: Map (?)
+  m_Name: Map
   m_TagString: GroupButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7205,7 +7205,7 @@ GameObject:
   - component: {fileID: 1713257590}
   - component: {fileID: 1713257589}
   m_Layer: 5
-  m_Name: Search Pannel
+  m_Name: Search Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7226,7 +7226,7 @@ RectTransform:
   - {fileID: 2073085346}
   - {fileID: 944758790}
   m_Father: {fileID: 1132635256}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -8033,7 +8033,7 @@ GameObject:
   - component: {fileID: 1877424560}
   - component: {fileID: 1877424559}
   m_Layer: 5
-  m_Name: Suspect Data
+  m_Name: Suspect
   m_TagString: GroupButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8383,12 +8383,12 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 1
   m_Spacing: 10
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
 --- !u!1 &1972749300
 GameObject:
@@ -8448,9 +8448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Environmental
-
-    Data'
+  m_text: Doc
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
