@@ -1,0 +1,9 @@
+Suspect2's Dialogue
+
+This is Suspect 2.
+This is just a place holder file.
+With some choices.
+Please choose an option:
+Are you sure to chose this option?
+Yes!
+You chose the first option!
