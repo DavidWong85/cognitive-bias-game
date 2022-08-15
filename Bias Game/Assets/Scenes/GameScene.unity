@@ -6661,10 +6661,10 @@ MonoBehaviour:
   interrogated3: 0
   interrogated4: 0
   LogManager: {fileID: 731998064}
-  log1: {fileID: 4900000, guid: 38aee965242d9544986a2dc9c23485fc, type: 3}
-  log2: {fileID: 4900000, guid: cb4a962d60d98b74eb0f0f0f1f0f8d2f, type: 3}
-  log3: {fileID: 4900000, guid: 7519ce54dcc10730689a95f97a4c76ef, type: 3}
-  log4: {fileID: 4900000, guid: 09bb006a3f7268c41a2e7f3d536e377c, type: 3}
+  log1: {fileID: 4900000, guid: 61b7b70a57cd4597c891c4321ae2707b, type: 3}
+  log2: {fileID: 4900000, guid: ab2f1a5ab6351d68db863c8fc1fc48df, type: 3}
+  log3: {fileID: 4900000, guid: 436ca1757bd8c5b51a68f38b51248136, type: 3}
+  log4: {fileID: 4900000, guid: 42302b2e0fb1c3d58b0967919217fd8b, type: 3}
   TextCreated1: 0
   TextCreated2: 0
   TextCreated3: 0
