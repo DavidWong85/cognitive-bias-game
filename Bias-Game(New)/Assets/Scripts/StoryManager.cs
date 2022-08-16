@@ -20,6 +20,10 @@ public class StoryManager : MonoBehaviour
     [Header("Story")]
     [SerializeField] private GameObject story;
 
+    [Header("LogManager")]
+    [SerializeField] private GameObject LogManager;
+    
+
     private Story currentStory;
 
     public bool storyIsPlaying { get; private set; }
@@ -80,6 +84,9 @@ public class StoryManager : MonoBehaviour
         storyIsPlaying = false;
         storyPanel.SetActive(false);
         storyText.text = "";
+        LogManager.GetComponent<LogManager>().setLog(story.GetComponent<StartStory>().getStory());
+        LogManager.GetComponent<LogManager>().ShowLog();
+        Debug.Log("Showing Log");
     }
 
     public void ContinueStory()
@@ -88,6 +95,7 @@ public class StoryManager : MonoBehaviour
         {
             storyText.text = currentStory.Continue();
             File.AppendAllText(path, storyText.text);
+            File.AppendAllText(path, "\n");
             DisplayChoices();
         }
         else 
@@ -146,7 +154,7 @@ public class StoryManager : MonoBehaviour
         path = Application.dataPath + "/Log/" + Name + ".txt";
         if (!story.GetComponent<story>().TextCreated)
         {
-            File.WriteAllText(path, Name + "\n\n");
+            File.WriteAllText(path, Name + "'s Log\n\n");
         }
     }
 
