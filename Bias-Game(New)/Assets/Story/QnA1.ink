@@ -17,7 +17,7 @@ Question 1: In the story, when a female opened the door, Sameer having thought s
         Are you sure?
             ++[Yes]
                 Yes! You got it correct!
-                ~ score = score+1
+                ~ score += 1
             ++[No]
                 -> Question1
                 
@@ -47,7 +47,7 @@ Question 2: After the woman opened the door and asked how she could help, Sameer
         Are you sure?
             ++[Yes]
                 You got the correct answer!
-                ~ score = score+1
+                ~ score += 1
             ++[No]
                 -> Question2
 

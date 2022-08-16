@@ -19,11 +19,7 @@ public class StoryManager : MonoBehaviour
 
     [Header("Story")]
     [SerializeField] private GameObject story;
-
-    [Header("LogManager")]
-    [SerializeField] private GameObject LogManager;
     
-
     private Story currentStory;
 
     public bool storyIsPlaying { get; private set; }
@@ -84,9 +80,6 @@ public class StoryManager : MonoBehaviour
         storyIsPlaying = false;
         storyPanel.SetActive(false);
         storyText.text = "";
-        LogManager.GetComponent<LogManager>().setLog(story.GetComponent<StartStory>().getStory());
-        LogManager.GetComponent<LogManager>().ShowLog();
-        Debug.Log("Showing Log");
     }
 
     public void ContinueStory()

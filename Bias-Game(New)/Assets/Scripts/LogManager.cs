@@ -17,6 +17,7 @@ public class LogManager : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (ShowingLog == false)
         {
             logPanel.SetActive(false);
@@ -25,6 +26,15 @@ public class LogManager : MonoBehaviour
         {
             logPanel.SetActive(true);
             logText.text = log.text;
+        }
+*/      if (ShowingLog == true)
+        {
+            logPanel.SetActive(true);
+            logText.text = log.text;
+            if (Scrollbar.GetComponent<Scrollbar>().value > 0)
+            {
+                Scrollbar.GetComponent<Scrollbar>().value -= 0.0005f;
+            }
         }
     }
 
