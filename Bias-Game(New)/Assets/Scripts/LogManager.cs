@@ -12,6 +12,7 @@ public class LogManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI logText;
     [SerializeField] private TextAsset log;
     [SerializeField] private GameObject Scrollbar;
+    [SerializeField] public bool storyEnded = false;
     
     [SerializeField] private bool ShowingLog = false;
 
@@ -27,11 +28,12 @@ public class LogManager : MonoBehaviour
             logPanel.SetActive(true);
             logText.text = log.text;
         }
-*/      if (ShowingLog == true)
+        */      
+        if (ShowingLog == true)
         {
             logPanel.SetActive(true);
             logText.text = log.text;
-            if (Scrollbar.GetComponent<Scrollbar>().value > 0)
+            if (Scrollbar.GetComponent<Scrollbar>().value > 0 && storyEnded == false)
             {
                 Scrollbar.GetComponent<Scrollbar>().value -= 0.0005f;
             }
@@ -40,7 +42,9 @@ public class LogManager : MonoBehaviour
 
     public void setLog(TextAsset _log)
     {   
+        #if UNITY_EDITOR
         AssetDatabase.Refresh();
+        #endif
         log = _log;
     }
 

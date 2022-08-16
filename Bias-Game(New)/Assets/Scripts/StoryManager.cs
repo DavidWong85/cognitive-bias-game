@@ -20,6 +20,9 @@ public class StoryManager : MonoBehaviour
     [Header("Story")]
     [SerializeField] private GameObject story;
     
+    [Header("LogManager")]
+    [SerializeField] private GameObject LogManager;
+
     private Story currentStory;
 
     public bool storyIsPlaying { get; private set; }
@@ -78,7 +81,9 @@ public class StoryManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         storyIsPlaying = false;
-        storyPanel.SetActive(false);
+        //storyPanel.SetActive(false);
+        LogManager.GetComponent<LogManager>().storyEnded = true;
+        continueButton.SetActive(false);
         storyText.text = "";
     }
 
