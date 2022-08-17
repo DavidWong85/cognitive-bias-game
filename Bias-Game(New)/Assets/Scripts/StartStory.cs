@@ -6,7 +6,8 @@ using TMPro;
 public class StartStory : MonoBehaviour
 {   
     [Header("Ink JSON")]
-    [SerializeField] public TextAsset inkJSON1;
+    [SerializeField] public TextAsset inkJSON;
+    [SerializeField] public TextAsset inkJSONQuestion;
  
     GameObject[] story;
     public void startStory()
@@ -16,7 +17,8 @@ public class StartStory : MonoBehaviour
         {
             if (target.GetComponent<story>().storyID == 1)
             {
-                StoryManager.GetInstance().EnterStoryMode(inkJSON1);
+                StoryManager.GetInstance().EnterStoryMode(inkJSON);
+                //StoryManager.GetInstance().EnterQuestionMode(inkJSONQuestion);
             } 
         }
     }
@@ -27,8 +29,9 @@ public class StartStory : MonoBehaviour
         foreach (GameObject target in story)
         {
             if (target.GetComponent<story>().storyID == 1)
-            {
-                return inkJSON1;
+            {   
+                Debug.Log("Got Story");
+                return inkJSON;
             }
         }
         return null;

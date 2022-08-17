@@ -33,11 +33,26 @@ public class LogManager : MonoBehaviour
         {
             logPanel.SetActive(true);
             logText.text = log.text;
+            /*
             if (Scrollbar.GetComponent<Scrollbar>().value > 0 && storyEnded == false)
             {
                 Scrollbar.GetComponent<Scrollbar>().value -= 0.0005f;
             }
+            */
         }
+    }
+
+    public void StoryMode()
+    {
+        RectTransform rt = logPanel.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(1600, -350);
+    }
+
+    public void LogMode()
+    {
+        RectTransform rt = logPanel.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(800, -10);
+        Scrollbar.GetComponent<Scrollbar>().value = 1;
     }
 
     public void setLog(TextAsset _log)
@@ -46,6 +61,7 @@ public class LogManager : MonoBehaviour
         AssetDatabase.Refresh();
         #endif
         log = _log;
+        Scrollbar.GetComponent<Scrollbar>().value = 0;
     }
 
     public void ShowLog()

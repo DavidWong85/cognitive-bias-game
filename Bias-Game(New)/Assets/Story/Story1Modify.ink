@@ -35,7 +35,7 @@ He climbed onto a large stone and looked at his mobile in the hope that the elev
 One would have thought the British government would have found a way of ensuring every nook and corner of this great island had mobile signal coverage!
 ->Walked5min
 *->
-He continued walking along the road.
+He continued to walk along the road.
 Another ten minutes later, Sameer suddenly came upon a house. It was tucked away into an alcove and was invisible until one came upon it.
 It was a small house with a neat garden in front and wooden railings all around it. A sign on the gate said "Piano Lessons Given By Experienced Teacher".
 ->DiscoverHouse
@@ -57,7 +57,7 @@ Sameer decided to wait.
 Sameer rang the bell anyway.
 -A few moments later, the door opened and a woman peeped out, a large dog beside her.
 Why did it have to be a woman? Sameer asked himself.
-If it were a man, there was much better cance of receiving some help.
+If it were a man, there was much better chance of receiving some help.
 I hope to God this woman does not turn out to be one of those dour and unhelpful ones, he told himself.
 Was this the piano teacher? Sameer wondered.
 Must be, since the piano was no longer playing.

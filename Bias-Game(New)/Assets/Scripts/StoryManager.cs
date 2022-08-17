@@ -13,9 +13,16 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI storyText;
     [SerializeField] private GameObject continueButton;
 
+    [Header("Question UI")]
+    [SerializeField] private GameObject questionPanel;
+    [SerializeField] private TextMeshProUGUI questionText;
+    [SerializeField] private GameObject continueQuestion;
+
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
+    [SerializeField] private GameObject[] questionChoices;
     private TextMeshProUGUI[] choicesText;
+    private TextMeshProUGUI[] questionChoicesText;
 
     [Header("Story")]
     [SerializeField] private GameObject story;
@@ -30,6 +37,8 @@ public class StoryManager : MonoBehaviour
     private string path;
 
     private static StoryManager instance;
+
+    private bool QuestionMode;
 
     private void Awake()
     {
@@ -48,13 +57,22 @@ public class StoryManager : MonoBehaviour
     private void Start()
     {   
         storyIsPlaying = false;
+        QuestionMode = false;
         storyPanel.SetActive(false);
+        questionPanel.SetActive(false);
 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
         foreach(GameObject choice in choices)
         {
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
+            index++;
+        }
+        questionChoicesText = new TextMeshProUGUI[questionChoices.Length];
+        index = 0;
+        foreach(GameObject questionChoice in questionChoices)
+        {
+            questionChoicesText[index] = questionChoice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
         }
     }
@@ -76,15 +94,27 @@ public class StoryManager : MonoBehaviour
         ContinueStory();
     }
 
+    public void EnterQuestionMode(TextAsset inkJSON)
+    {
+        QuestionMode = true;
+        currentStory = new Story(inkJSON.text);
+        //storyIsPlaying = true;
+        questionPanel.SetActive(true);
+
+        ContinueQuestion();
+    }
+
     private IEnumerator ExitStoryMode()
     {   
         yield return new WaitForSeconds(0.1f);
 
-        storyIsPlaying = false;
-        //storyPanel.SetActive(false);
+        //storyIsPlaying = false;
+        storyPanel.SetActive(false);
         LogManager.GetComponent<LogManager>().storyEnded = true;
         continueButton.SetActive(false);
         storyText.text = "";
+        LogManager.GetComponent<LogManager>().LogMode();
+        EnterQuestionMode(story.GetComponent<StartStory>().inkJSONQuestion);
     }
 
     public void ContinueStory()
@@ -102,6 +132,20 @@ public class StoryManager : MonoBehaviour
         }
     }
 
+    public void ContinueQuestion()
+    {
+        if (currentStory.canContinue)
+        {
+            questionText.text = currentStory.Continue();
+            DisplayChoices();
+        }
+        else 
+        {   
+            Debug.Log("End of Question");
+            //StartCoroutine(ExitStoryMode());
+        }
+    }
+
     private void DisplayChoices()
     {
         List<Choice> currentChoices = currentStory.currentChoices;
@@ -112,27 +156,59 @@ public class StoryManager : MonoBehaviour
         }
 
         if (currentChoices.Count > 0)
+        {   
+            if (QuestionMode != true)
+            {
+                continueButton.SetActive(false);
+            }
+            else
+            {
+                continueQuestion.SetActive(false);
+            }
+            
+        }
+        else
+        {   
+            if (QuestionMode != true)
+            {
+                continueButton.SetActive(true);
+            }
+            else
+            {
+                continueQuestion.SetActive(true);
+            }
+            
+        }
+
+        if (QuestionMode != true)
         {
-            continueButton.SetActive(false);
+            int index = 0;
+            foreach(Choice choice in currentChoices)
+            {
+                choices[index].gameObject.SetActive(true);
+                choicesText[index].text = choice.text;
+                index++;
+            }
+            for (int i = index; i < choices.Length; i++)
+            {
+                choices[i].gameObject.SetActive(false);
+            }
         }
         else
         {
-            continueButton.SetActive(true);
+            int index = 0;
+            foreach(Choice questionChoice in currentChoices)
+            {
+                questionChoices[index].gameObject.SetActive(true);
+                choicesText[index].text = questionChoice.text;
+                index++;
+            }
+            for (int i = index; i < questionChoices.Length; i++)
+            {
+                questionChoices[i].gameObject.SetActive(false);
+            }
         }
-
-        int index = 0;
-        foreach(Choice choice in currentChoices)
-        {
-            choices[index].gameObject.SetActive(true);
-            choicesText[index].text = choice.text;
-            index++;
-        }
-        for (int i = index; i < choices.Length; i++)
-        {
-            choices[i].gameObject.SetActive(false);
-        }
-
-        StartCoroutine(SelectFirstChoice());
+        //StartCoroutine(SelectFirstChoice());
     }
 
     private IEnumerator SelectFirstChoice()
@@ -161,3 +237,4 @@ public class StoryManager : MonoBehaviour
         story = gameObject;
     }
 }
+
