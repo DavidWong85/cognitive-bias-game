@@ -99,7 +99,6 @@ public class StoryManager : MonoBehaviour
     {
         QuestionMode = true;
         currentStory = new Story(inkJSON.text);
-        //storyIsPlaying = true;
         questionPanel.SetActive(true);
 
         ContinueQuestion();
@@ -109,13 +108,21 @@ public class StoryManager : MonoBehaviour
     {   
         yield return new WaitForSeconds(0.1f);
 
-        //storyIsPlaying = false;
         storyPanel.SetActive(false);
         LogManager.GetComponent<LogManager>().storyEnded = true;
         continueButton.SetActive(false);
+        continueQuestion.SetActive(false);
         storyText.text = "";
         LogManager.GetComponent<LogManager>().LogMode();
-        EnterQuestionMode(story.GetComponent<StartStory>().inkJSONQuestion);
+        if (QuestionMode == true)
+        {   
+            Debug.Log("Finished");
+            storyIsPlaying = false;
+        }
+        else
+        {
+            EnterQuestionMode(story.GetComponent<StartStory>().inkJSONQuestion);
+        }
     }
 
     public void ContinueStory()
@@ -142,8 +149,7 @@ public class StoryManager : MonoBehaviour
         }
         else 
         {   
-            Debug.Log("End of Question");
-            //StartCoroutine(ExitStoryMode());
+            StartCoroutine(ExitStoryMode());
         }
     }
 

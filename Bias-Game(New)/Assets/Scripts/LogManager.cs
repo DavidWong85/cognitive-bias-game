@@ -17,28 +17,11 @@ public class LogManager : MonoBehaviour
     [SerializeField] private bool ShowingLog = false;
 
     private void Update()
-    {
-        /*
-        if (ShowingLog == false)
-        {
-            logPanel.SetActive(false);
-        }
-        else 
-        {
-            logPanel.SetActive(true);
-            logText.text = log.text;
-        }
-        */      
+    {   
         if (ShowingLog == true)
         {
             logPanel.SetActive(true);
             logText.text = log.text;
-            /*
-            if (Scrollbar.GetComponent<Scrollbar>().value > 0 && storyEnded == false)
-            {
-                Scrollbar.GetComponent<Scrollbar>().value -= 0.0005f;
-            }
-            */
         }
     }
 
@@ -51,7 +34,7 @@ public class LogManager : MonoBehaviour
     public void LogMode()
     {
         RectTransform rt = logPanel.GetComponent<RectTransform>();
-        rt.sizeDelta = new Vector2(800, -10);
+        rt.sizeDelta = new Vector2(900, -10);
         Scrollbar.GetComponent<Scrollbar>().value = 1;
     }
 
