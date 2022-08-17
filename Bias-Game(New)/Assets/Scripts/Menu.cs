@@ -16,8 +16,10 @@ public class Menu : MonoBehaviour
     }
 
     public void ExitGame()
-    {
+    {   
+        #if UNITY_EDITOR
         Debug.Log("Quit Game");
+        #endif
         Application.Quit();
     }
 }
