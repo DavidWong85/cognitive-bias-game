@@ -68,12 +68,13 @@ public class StoryManager : MonoBehaviour
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
         }
+
         questionChoicesText = new TextMeshProUGUI[questionChoices.Length];
-        index = 0;
+        int questionindex = 0;
         foreach(GameObject questionChoice in questionChoices)
         {
-            questionChoicesText[index] = questionChoice.GetComponentInChildren<TextMeshProUGUI>();
-            index++;
+            questionChoicesText[questionindex] = questionChoice.GetComponentInChildren<TextMeshProUGUI>();
+            questionindex++;
         }
     }
 
@@ -200,7 +201,7 @@ public class StoryManager : MonoBehaviour
             foreach(Choice questionChoice in currentChoices)
             {
                 questionChoices[index].gameObject.SetActive(true);
-                choicesText[index].text = questionChoice.text;
+                questionChoicesText[index].text = questionChoice.text;
                 index++;
             }
             for (int i = index; i < questionChoices.Length; i++)
