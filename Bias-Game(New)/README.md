@@ -1,6 +1,6 @@
 ### How to run
 
-An executable "Biasg-Game(New).exe" are included within the "Build" folder, double click to run it.
+An executable "Bias-Game(New).exe" are included within the "Build" folder, double click to run it.
 
 ### How to open in Unity Editor:
 
