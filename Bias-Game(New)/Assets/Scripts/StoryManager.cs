@@ -130,8 +130,8 @@ public class StoryManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             storyText.text = currentStory.Continue();
-            File.AppendAllText(path, storyText.text);
-            File.AppendAllText(path, "\n");
+            //Output text using log manager
+            LogManager.GetComponent<LogManager>().addLog(storyText.text);
             DisplayChoices();
         }
         else 
@@ -215,28 +215,11 @@ public class StoryManager : MonoBehaviour
                 questionChoices[i].gameObject.SetActive(false);
             }
         }
-        //StartCoroutine(SelectFirstChoice());
-    }
-
-    private IEnumerator SelectFirstChoice()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-        yield return new WaitForEndOfFrame();
-        EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
     }
 
     public void MakeChoice(int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
-    }
-
-    public void CreateText(string Name)
-    {   
-        path = Application.dataPath + "/Log/" + Name + ".txt";
-        if (!story.GetComponent<story>().TextCreated)
-        {
-            File.WriteAllText(path, Name + "'s Log\n\n");
-        }
     }
 
     public void setStory(GameObject gameObject)

@@ -10,18 +10,16 @@ public class LogManager : MonoBehaviour
     [Header("Text UI")]
     [SerializeField] private GameObject logPanel;
     [SerializeField] private TextMeshProUGUI logText;
-    [SerializeField] private TextAsset log;
     [SerializeField] private GameObject Scrollbar;
     [SerializeField] public bool storyEnded = false;
-    
     [SerializeField] private bool ShowingLog = false;
+    
 
     private void Update()
     {   
         if (ShowingLog == true)
         {
             logPanel.SetActive(true);
-            logText.text = log.text;
         }
     }
 
@@ -38,12 +36,9 @@ public class LogManager : MonoBehaviour
         Scrollbar.GetComponent<Scrollbar>().value = 1;
     }
 
-    public void setLog(TextAsset _log)
-    {   
-        #if UNITY_EDITOR
-        AssetDatabase.Refresh();
-        #endif
-        log = _log;
+    public void addLog(string log)
+    {
+        logText.text += log + "\n";
         Scrollbar.GetComponent<Scrollbar>().value = 0;
     }
 
